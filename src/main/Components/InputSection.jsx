@@ -1,27 +1,27 @@
-import React, {useState} from "react";
+import React from "react";
 import MultiButton from "./MultiButton";
+import {useDispatch} from "react-redux";
 
 function InputSection(props) {
-    const [score, setScore] = useState(0);
+    const dispatch = useDispatch();
 
     const handleInput = (e) => {
-        setScore(e.target.value);
-        props.onRoundScoreChange(props.player.name, e.target.value);
+        dispatch({type: "SET_ROUND_SCORE", name: props.player.name, roundScore: e.target.value})
     }
 
-    const onAdd = () => {
-        props.onAddRound(props.player.name, score * props.player.multiplier);
+    const addRounds = () => {
+        dispatch({type: 'ADD_ROUND', name: props.player.name})
     }
 
-    const onReset = () => {
-        props.onReset(props.player.name);
+    const resetRounds = () => {
+        dispatch({type: 'RESET_ROUNDS', name: props.player.name})
     }
 
     return <div>
         <input type="number" placeholder="Enter Score" onInput={handleInput}/>
-        <button onClick={onAdd}>Add</button>
-        <button onClick={onReset}>Reset</button>
-        <MultiButton name={props.player.name} onChangeMultiplier={props.onChangeMultiplier}/>
+        <button onClick={addRounds}>Add</button>
+        <button onClick={resetRounds}>Reset</button>
+        <MultiButton name={props.player.name}/>
     </div>
 }
 
