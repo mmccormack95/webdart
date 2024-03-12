@@ -1,8 +1,8 @@
-import playerReducer from "./reducer";
+import threeOhOnePlayerReducer from "./reducer";
 
 const rootReducer = (state = {}, action) => {
     return {
-        players: playerReducer(state.players, action)
+        players: threeOhOnePlayerReducer(state.players, action)
     }
 }
 

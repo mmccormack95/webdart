@@ -6,7 +6,7 @@ class MainPage extends Component {
     render() {
         return <div>
             <Title title={"Dart Game"}/>
-            <ScoringSection players={this.props.players}/>
+            <ScoringSection threeOhOneplayers={this.props.players.players.threeOhOneplayers}/>
         </div>
     }
 }
