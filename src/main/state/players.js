@@ -11,7 +11,8 @@ const players = {
         rounds: [],
         roundScore: 0,
         multiplier: 1
-    }]
+    }],
+    gameMode: "301"
 };
 
 export default players;

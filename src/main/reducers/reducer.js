@@ -45,6 +45,11 @@ const threeOhOnePlayerReducer = (state = players, action) => {
                     return player;
                 })
             }
+        case 'SET_GAME':
+            return {
+                ...state,
+                gameMode: action.game
+            }
         default:
             return state;
     }

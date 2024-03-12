@@ -3,7 +3,7 @@ import MainPage from "../main/Components/MainPage";
 import {configure, shallow} from 'enzyme';
 import Adapter from '@cfaester/enzyme-adapter-react-18';
 import Title from "../main/Components/Title";
-import ScoringSection from "../main/Components/ScoringSection";
+import ScoringSection from "../main/Components/301/ThreeOhOneScoringSection";
 
 configure({adapter: new Adapter()});
 

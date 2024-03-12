@@ -1,5 +1,5 @@
 import React from "react";
-import MultiButton from "./MultiButton";
+import MultiButton from "./301/MultiButton";
 import {useDispatch} from "react-redux";
 
 function InputSection(props) {

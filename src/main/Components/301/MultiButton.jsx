@@ -5,7 +5,6 @@ function MultiButton(props) {
     const dispatch = useDispatch();
 
     const onChangeMultiplier = (e) => {
-        console.log(props.name, e.target.id);
         dispatch({type: "SET_MULTIPLIER", name: props.name, multiplier: parseInt(e.target.id)})
     }
 

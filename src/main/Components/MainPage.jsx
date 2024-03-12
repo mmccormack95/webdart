@@ -1,12 +1,14 @@
 import React, {Component} from "react";
 import Title from "./Title";
-import ScoringSection from "./ScoringSection";
+import GameSelection from "./GameSelection";
+import Game from "./Game";
 
 class MainPage extends Component {
     render() {
         return <div>
-            <Title title={"Dart Game"}/>
-            <ScoringSection threeOhOneplayers={this.props.players.players.threeOhOneplayers}/>
+            <Title title={"Dart Games"}/>
+            <GameSelection/>
+            <Game players={this.props.players}/>
         </div>
     }
 }
