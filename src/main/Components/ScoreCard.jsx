@@ -1,42 +1,34 @@
-import React, {useState} from "react";
-import InputSection from "./InputSection";
-import ScoreTable from "./ScoreTable";
+import React from "react";
 import MultiButton from "./MultiButton";
+import {useDispatch} from "react-redux";
 
 function ScoreCard(props) {
-    // return <div className="scoreCard">
-    //     <h2> {props.player.name} </h2>
-    //     <div>
-    //         <InputSection player={props.player} onChangeMultiplier={props.onChangeMultiplier} onRoundScoreChange={props.onRoundScoreChange} onAddRound={props.onAddRound}/>
-    //         <ScoreTable player={props.player}/>
-    //     </div>
-    // </div>
-    const [score, setScore] = useState(0);
+
+    const dispatch = useDispatch();
 
     const handleInput = (e) => {
-        props.onRoundScoreChange(props.player.name, e.target.value);
+        dispatch({type: "SET_ROUND_SCORE", name: props.player.name, roundScore: e.target.value})
     }
 
-    const onAdd = () => {
-        setScore(props.player.score + (props.player.roundScore * props.player.multiplier));
-        props.onAddRound(props.player.name, props.player.roundScore * props.player.multiplier);
+    const addRounds = () => {
+        dispatch({type: 'ADD_ROUND', name: props.player.name})
     }
 
-    const onReset = () => {
-        props.onReset(props.player.name);
+    const resetRounds = () => {
+        dispatch({type: 'RESET_ROUNDS', name: props.player.name})
     }
 
     return <div className="scoreCard">
         <h2> {props.player.name} </h2>
         <div>
             <input type="number" placeholder="Enter Score" onInput={handleInput}/>
-            <button onClick={onAdd}>Add</button>
-            <button onClick={onReset}>Reset</button>
-            <MultiButton name={props.player.name} onChangeMultiplier={props.onChangeMultiplier}/>
+            <button onClick={addRounds}>Add</button>
+            <button onClick={resetRounds}>Reset</button>
+            <MultiButton name={props.player.name}/>
         </div>
         <div>
             {props.player.rounds.map((round, index) => <p key={index}>Round {index + 1}: {round}</p>)}
-            <p>Score: {score}</p>
+            <p>Score: {props.player.totalScore}</p>
         </div>
     </div>
 }
