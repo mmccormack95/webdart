@@ -1,5 +1,5 @@
 import React from "react";
-import MultiButton from "./301/MultiButton";
+import MultiButton from "./MultiButton";
 import {useDispatch} from "react-redux";
 
 function InputSection(props) {
@@ -13,14 +13,14 @@ function InputSection(props) {
         dispatch({type: 'ADD_ROUND', name: props.player.name})
     }
 
-    const resetRounds = () => {
-        dispatch({type: 'RESET_ROUNDS', name: props.player.name})
+    const undoRound = () => {
+        dispatch({type: 'UNDO_ROUND', name: props.player.name})
     }
 
     return <div>
         <input type="number" placeholder="Enter Score" onInput={handleInput}/>
         <button onClick={addRounds}>Add</button>
-        <button onClick={resetRounds}>Reset</button>
+        <button onClick={undoRound}>Undo</button>
         <MultiButton name={props.player.name}/>
     </div>
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import InputSection from "../InputSection";
+import InputSection from "./InputSection";
 import ScoreTable from "./ScoreTable";
 
 function ScoreCard(props) {

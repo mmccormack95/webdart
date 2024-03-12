@@ -23,15 +23,23 @@ const threeOhOnePlayerReducer = (state = players, action) => {
                     return player;
                 })
             }
-        case 'RESET_ROUNDS':
+        case 'UNDO_ROUND':
             return {
                 ...state,
                 threeOhOneplayers: state.threeOhOneplayers.map(player => {
                     if (player.name === action.name) {
-                        player.rounds = [];
-                        player.totalScore = 0;
-                        player.roundScore = 0;
+                        player.totalScore = player.totalScore - player.rounds[player.rounds.length - 1];
+                        player.rounds.pop();
                     }
+                    return player;
+                })
+            }
+        case 'RESET_ROUNDS':
+            return {
+                ...state,
+                threeOhOneplayers: state.threeOhOneplayers.map(player => {
+                    player.rounds = [];
+                    player.totalScore = 0;
                     return player;
                 })
             }
