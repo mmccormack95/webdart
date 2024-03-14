@@ -13,7 +13,6 @@ function ThreeOhOneScoringSection(props) {
             {props.players.threeOhOneplayers.map((player, index) => <ScoreCard key={index} player={player}/>)}
         </div>
     </>
-    //test for github
 }
 
 export default ThreeOhOneScoringSection;
