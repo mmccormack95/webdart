@@ -7,7 +7,7 @@ export const getGameMode = createSelector(
     players => players,
 );
 
-export const getPlayerScores = createSelector(
+export const getWinningPlayer = createSelector(
     playersState,
-    players => players,
+    players => players.threeOhOneplayers.find(player => player.totalScore === 301)
 );
