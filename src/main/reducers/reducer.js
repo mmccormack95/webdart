@@ -8,7 +8,10 @@ const threeOhOnePlayerReducer = (state = players, action) => {
                 threeOhOneplayers: state.threeOhOneplayers.map(player => {
                     if (player.name === action.name) {
                         player.rounds.push(player.roundScore * player.multiplier);
-                        player.totalScore = parseInt(player.totalScore) + (parseInt(player.roundScore) * player.multiplier);
+                        const total = parseInt(player.totalScore) + (parseInt(player.roundScore) * player.multiplier);
+                        if (total <= 301) {
+                            player.totalScore = total;
+                        }
                     }
                     return player;
                 })
