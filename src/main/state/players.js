@@ -3,6 +3,7 @@ const players = {
         name: "Player 1",
         totalScore: "0",
         rounds: [],
+
         roundScore: 0,
         multiplier: 1
         }, {
