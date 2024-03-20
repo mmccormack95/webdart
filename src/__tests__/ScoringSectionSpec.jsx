@@ -1,6 +1,6 @@
 import React from "react";
 import {configure, shallow } from "enzyme";
-import ScoringSection from "../main/Components/301/ThreeOhOneScoringSection";
+import ScoringSection from "../main/Components/301/ScoringSection";
 import Adapter from "@cfaester/enzyme-adapter-react-18";
 
 configure({adapter: new Adapter()});

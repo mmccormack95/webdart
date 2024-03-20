@@ -1,9 +1,12 @@
-import threeOhOnePlayerReducer from "./reducer";
+import threeOhOneReducer from "./threeOhOneReducer";
+import {combineReducers} from "redux";
+import uiReducer from "./uiReducer";
+import cricketReducer from "./cricketReducer";
 
-const rootReducer = (state = {}, action) => {
-    return {
-        players: threeOhOnePlayerReducer(state.players, action)
-    }
-}
+const rootReducer = combineReducers({
+    threeOhOne: threeOhOneReducer,
+    ui: uiReducer,
+    cricket: cricketReducer,
+});
 
 export default rootReducer;

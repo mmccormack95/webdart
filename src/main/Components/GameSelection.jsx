@@ -1,11 +1,12 @@
 import React from "react";
 import {useDispatch} from "react-redux";
+import {setGame} from "../actions/uiActions";
 
 function GameSelection() {
     const dispatch = useDispatch();
 
     const gameSelect = (e) => {
-        dispatch({type: "SET_GAME", game: e.target.value})
+        dispatch(setGame(e.target.value))
     }
 
     return <div className='gameSelection'>
