@@ -36,8 +36,10 @@ const threeOhOneReducer = (state = threeOhOneState, action) => {
                 ...state,
                 players: state.players.map(player => {
                     if (player.name === action.name) {
-                        player.totalScore = player.rounds[player.rounds.length - 1][1] - player.rounds[player.rounds.length - 1][0]  ;
-                        player.rounds.pop();
+                        if(player.rounds.length > 0) {
+                            player.totalScore = player.rounds[player.rounds.length - 1][1] - player.rounds[player.rounds.length - 1][0]  ;
+                            player.rounds.pop();
+                        }
                     }
                     return player;
                 })
