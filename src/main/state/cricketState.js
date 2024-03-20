@@ -1,9 +1,8 @@
-const players = {
-    threeOhOneplayers: [{
+const cricketState = {
+    players: [{
         name: "Player 1",
         totalScore: "0",
         rounds: [],
-
         roundScore: 0,
         multiplier: 1
         }, {
@@ -12,8 +11,7 @@ const players = {
         rounds: [],
         roundScore: 0,
         multiplier: 1
-    }],
-    gameMode: "301"
-};
+    }]
+}
 
-export default players;
+export default cricketState;
