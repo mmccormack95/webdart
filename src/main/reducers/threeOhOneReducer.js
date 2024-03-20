@@ -1,14 +1,14 @@
-import players from "../state/players";
+import threeOhOneState from "../state/threeOhOneState";
 
-const threeOhOnePlayerReducer = (state = players, action) => {
+const threeOhOneReducer = (state = threeOhOneState, action) => {
     switch (action.type) {
         case 'ADD_ROUND':
             return {
                 ...state,
-                threeOhOneplayers: state.threeOhOneplayers.map(player => {
+                players: state.players.map(player => {
                     if (player.name === action.name) {
                         player.rounds.push(player.roundScore * player.multiplier);
-                        const total = parseInt(player.totalScore) + (parseInt(player.roundScore) * player.multiplier);
+                        const total = parseInt(player.totalScore) + (parseInt(player.roundScore) * parseInt(player.multiplier));
                         if (total <= 301) {
                             player.totalScore = total;
                         }
@@ -19,7 +19,7 @@ const threeOhOnePlayerReducer = (state = players, action) => {
         case 'SET_ROUND_SCORE':
             return {
                 ...state,
-                threeOhOneplayers: state.threeOhOneplayers.map(player => {
+                players: state.players.map(player => {
                     if (player.name === action.name) {
                         player.roundScore = action.roundScore;
                     }
@@ -29,7 +29,7 @@ const threeOhOnePlayerReducer = (state = players, action) => {
         case 'UNDO_ROUND':
             return {
                 ...state,
-                threeOhOneplayers: state.threeOhOneplayers.map(player => {
+                players: state.players.map(player => {
                     if (player.name === action.name) {
                         player.totalScore = player.totalScore - player.rounds[player.rounds.length - 1];
                         player.rounds.pop();
@@ -40,7 +40,7 @@ const threeOhOnePlayerReducer = (state = players, action) => {
         case 'RESET_ROUNDS':
             return {
                 ...state,
-                threeOhOneplayers: state.threeOhOneplayers.map(player => {
+                players: state.players.map(player => {
                     player.rounds = [];
                     player.totalScore = 0;
                     return player;
@@ -49,21 +49,16 @@ const threeOhOnePlayerReducer = (state = players, action) => {
         case 'SET_MULTIPLIER':
             return {
                 ...state,
-                threeOhOneplayers: state.threeOhOneplayers.map(player => {
+                players: state.players.map(player => {
                     if (player.name === action.name) {
                         player.multiplier = action.multiplier;
                     }
                     return player;
                 })
             }
-        case 'SET_GAME':
-            return {
-                ...state,
-                gameMode: action.game
-            }
         default:
             return state;
     }
 }
 
-export default threeOhOnePlayerReducer;
+export default threeOhOneReducer;

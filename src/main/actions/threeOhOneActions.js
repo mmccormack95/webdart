@@ -20,11 +20,6 @@ export const setMultiplier = (name, multiplier) => ({
     multiplier: multiplier
 });
 
-export const setGame = (game) => ({
-    type: 'SET_GAME',
-    game: game
-});
-
 export const undoRound = (name) => ({
     type: 'UNDO_ROUND',
     name: name

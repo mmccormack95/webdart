@@ -1,14 +1,15 @@
 import React from "react";
-import ThreeOhOneScoringSection from "./301/ThreeOhOneScoringSection";
-import {getGameMode} from "../selectors/players";
+import ScoringSection from "./301/ScoringSection";
 import {useDispatch, useSelector} from "react-redux";
+import {resetRounds} from "../actions/threeOhOneActions";
+import {getGameMode} from "../selectors/uiSelector";
 
 function Game(props) {
     const {gameMode} = useSelector(getGameMode)
     const dispatch = useDispatch();
 
-    const resetRounds = () => {
-        dispatch({type: "RESET_ROUNDS"})
+    const resetRoundsAction = () => {
+        dispatch(resetRounds())
     }
 
     return (
@@ -16,9 +17,9 @@ function Game(props) {
             {gameMode === "301" && (<>
                     <h2>301</h2>
                     <div className="newGameButtonGrid">
-                        <button className="newGameButton" onClick={resetRounds}>New Game</button>
+                        <button className="newGameButton" onClick={resetRoundsAction}>New Game</button>
                     </div>
-                    <ThreeOhOneScoringSection players={props.players.players}/>
+                    <ScoringSection players={props.players.threeOhOne.players}/>
                 </>
             )}
             {gameMode === "Cricket" && (<>

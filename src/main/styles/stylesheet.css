@@ -58,7 +58,8 @@ h2 {
         font-size: 40px;
         border-radius: 12px;
         text-align: center;
-        background-color: greenyellow;
+        background-color: limegreen;
+        padding: 10px;
     }
 }
 

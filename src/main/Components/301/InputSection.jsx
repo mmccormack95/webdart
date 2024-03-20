@@ -1,26 +1,27 @@
 import React from "react";
 import MultiButton from "./MultiButton";
 import {useDispatch} from "react-redux";
+import {addRound, handleRoundScoreChange, undoRound} from "../../actions/threeOhOneActions";
 
 function InputSection(props) {
     const dispatch = useDispatch();
 
     const handleInput = (e) => {
-        dispatch({type: "SET_ROUND_SCORE", name: props.player.name, roundScore: e.target.value})
+        dispatch(handleRoundScoreChange(props.player.name, e.target.value))
     }
 
     const addRounds = () => {
-        dispatch({type: 'ADD_ROUND', name: props.player.name})
+        dispatch(addRound(props.player.name))
     }
 
-    const undoRound = () => {
-        dispatch({type: 'UNDO_ROUND', name: props.player.name})
+    const undoRoundAction = () => {
+        dispatch(undoRound(props.player.name))
     }
 
     return <div>
         <input type="number" placeholder="Enter Score" onInput={handleInput}/>
         <button onClick={addRounds}>Add</button>
-        <button onClick={undoRound}>Undo</button>
+        <button onClick={undoRoundAction}>Undo</button>
         <MultiButton name={props.player.name}/>
     </div>
 }
