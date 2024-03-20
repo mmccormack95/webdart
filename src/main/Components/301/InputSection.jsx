@@ -1,28 +1,29 @@
 import React from "react";
 import MultiButton from "./MultiButton";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {addRound, handleRoundScoreChange, undoRound} from "../../actions/threeOhOneActions";
+import {getPlayerTurn} from "../../selectors/threeOhOneSelector";
 
 function InputSection(props) {
     const dispatch = useDispatch();
-
-    const handleInput = (e) => {
-        dispatch(handleRoundScoreChange(props.player.name, e.target.value))
-    }
+    const playerTurn = useSelector(getPlayerTurn);
 
     const addRounds = () => {
-        dispatch(addRound(props.player.name))
+        const input = document.getElementById('inputBar').value;
+        dispatch(handleRoundScoreChange(input))
+        dispatch(addRound(playerTurn))
+        document.getElementById('inputBar').value = '0';
     }
 
     const undoRoundAction = () => {
-        dispatch(undoRound(props.player.name))
+        dispatch(undoRound(playerTurn))
     }
 
-    return <div>
-        <input type="number" placeholder="Enter Score" onInput={handleInput}/>
+    return <div className="input-section">
+        <input id="inputBar" type="number" placeholder="Enter Score" defaultValue='0'/>
         <button onClick={addRounds}>Add</button>
         <button onClick={undoRoundAction}>Undo</button>
-        <MultiButton name={props.player.name}/>
+        <MultiButton name={props.turn}/>
     </div>
 }
 

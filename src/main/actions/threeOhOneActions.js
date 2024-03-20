@@ -1,12 +1,10 @@
-export const addRound = (name, roundScore) => ({
+export const addRound = (name) => ({
     type: 'ADD_ROUND',
-    name: name,
-    roundScore: roundScore
+    name: name
 });
 
-export const handleRoundScoreChange = (name, roundScore) => ({
+export const handleRoundScoreChange = (roundScore) => ({
     type: 'SET_ROUND_SCORE',
-    name: name,
     roundScore: roundScore
 });
 
@@ -14,9 +12,8 @@ export const resetRounds = () => ({
     type: 'RESET_ROUNDS'
 });
 
-export const setMultiplier = (name, multiplier) => ({
+export const setMultiplier = (multiplier) => ({
     type: 'SET_MULTIPLIER',
-    name: name,
     multiplier: multiplier
 });
 
