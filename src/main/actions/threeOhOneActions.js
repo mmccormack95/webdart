@@ -1,12 +1,10 @@
-export const addRound = (name, roundScore) => ({
+export const addRound = (name) => ({
     type: 'ADD_ROUND',
-    name: name,
-    roundScore: roundScore
+    name: name
 });
 
-export const handleRoundScoreChange = (name, roundScore) => ({
+export const handleRoundScoreChange = (roundScore) => ({
     type: 'SET_ROUND_SCORE',
-    name: name,
     roundScore: roundScore
 });
 

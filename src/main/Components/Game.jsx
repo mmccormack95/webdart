@@ -14,8 +14,8 @@ function Game(props) {
 
     return (
         <>
+            <h2>{gameMode}</h2>
             {gameMode === "301" && (<>
-                    <h2>301</h2>
                     <div className="newGameButtonGrid">
                         <button className="newGameButton" onClick={resetRoundsAction}>New Game</button>
                     </div>
@@ -23,7 +23,6 @@ function Game(props) {
                 </>
             )}
             {gameMode === "Cricket" && (<>
-                    <h2>Cricket</h2>
                 </>
             )}
         </>
