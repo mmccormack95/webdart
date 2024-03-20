@@ -2,11 +2,11 @@ import React from "react";
 import {useDispatch} from "react-redux";
 import {setMultiplier} from "../../actions/threeOhOneActions";
 
-function MultiButton(props) {
+function MultiButton() {
     const dispatch = useDispatch();
 
     const onChangeMultiplier = (e) => {
-        dispatch(setMultiplier(props.name, e.target.value))
+        dispatch(setMultiplier(e.target.value))
     }
 
     return <div className='multiButton'>

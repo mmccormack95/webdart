@@ -12,9 +12,8 @@ export const resetRounds = () => ({
     type: 'RESET_ROUNDS'
 });
 
-export const setMultiplier = (name, multiplier) => ({
+export const setMultiplier = (multiplier) => ({
     type: 'SET_MULTIPLIER',
-    name: name,
     multiplier: multiplier
 });
 
