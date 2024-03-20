@@ -40,6 +40,11 @@ h2 {
     justify-content: center;
     margin: 20px;
 }
+.input-section input::-webkit-outer-spin-button,
+.input-section input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 .input-section input[type="number"] {
     -moz-appearance: textfield;
     margin: 5px;
