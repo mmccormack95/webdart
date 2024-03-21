@@ -8,6 +8,7 @@ const threeOhOneState = {
         totalScore: "0",
         rounds: [],
     }],
+    round: [],
     turn: "Player 1",
     roundScore: 0,
     multiplier: 1,
