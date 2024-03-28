@@ -35,12 +35,24 @@ const threeOhOneReducer = (state = threeOhOneState, action) => {
                 roundScore: action.roundScore
             }
         case 'UNDO_ROUND':
+            const isMiddleOfRound = state.round.length > 0;
+
+            if(isMiddleOfRound) {
+                state.round.pop();
+                return {
+                    ...state,
+                    round: state.round.length === 1 ? state.round : [],
+                    roundScore: 0,
+                }
+            }
+
+            const turnAvailable = !(state.players.find(player=>player.name === "Player 1").rounds.length === 0);
+
             return {
                 ...state,
                 players: state.players.map(player => {
                     if (player.name !== action.name) {
                         if(player.rounds.length > 0) {
-                            console.log(player.rounds[player.rounds.length - 1][0]);
                             player.totalScore = player.rounds[player.rounds.length - 1][1] -
                                 player.rounds[player.rounds.length - 1][0]
                                     .reduce((totalScore, score) => parseInt(totalScore) + parseInt(score));
@@ -49,7 +61,7 @@ const threeOhOneReducer = (state = threeOhOneState, action) => {
                     }
                     return player;
                 }),
-                turn: state.turn === "Player 1" ? "Player 2" : "Player 1",
+                turn: turnAvailable ? (state.turn === "Player 1" ? "Player 2" : "Player 1") : state.turn,
                 roundScore: 0,
             }
         case 'RESET_ROUNDS':
