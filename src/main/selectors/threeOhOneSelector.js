@@ -14,3 +14,8 @@ export const getPlayerTurn = createSelector(
     threeOhOneState,
     turn => turn.turn,
 );
+
+export const getCurrentRound = createSelector(
+    threeOhOneState,
+    round => round.round,
+);
