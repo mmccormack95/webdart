@@ -3,6 +3,7 @@ import ScoringSection from "./301/ScoringSection";
 import {useDispatch, useSelector} from "react-redux";
 import {resetRounds} from "../actions/threeOhOneActions";
 import {getGameMode} from "../selectors/uiSelector";
+import Cricket from "./cricket/Cricket";
 
 function Game(props) {
     const {gameMode} = useSelector(getGameMode)
@@ -23,6 +24,7 @@ function Game(props) {
                 </>
             )}
             {gameMode === "Cricket" && (<>
+                    <Cricket />
                 </>
             )}
         </>
