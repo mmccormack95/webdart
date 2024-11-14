@@ -16,3 +16,8 @@ export const getRounds = createSelector(
     cricketState,
     rounds => rounds.rounds,
 );
+
+export const getPlayers = createSelector(
+    cricketState,
+    players => players.players,
+);

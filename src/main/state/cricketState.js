@@ -11,7 +11,7 @@ const cricketState = {
             ["15", 0],
             ["B", 0]
         ]
-        }, {
+    }, {
         name: "Player 2",
         totalScore: 0,
         tally: [

@@ -6,7 +6,7 @@ function WinningModal(props) {
         document.getElementById('modal-container').style.display = 'none';
     }
 
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target === document.getElementById('modal-container')) {
             document.getElementById('modal-container').style.display = 'none';
         }
