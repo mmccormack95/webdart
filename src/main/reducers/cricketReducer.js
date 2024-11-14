@@ -9,7 +9,7 @@ const cricketReducer = (state = cricketState, action) => {
                     if (player.name === 'Player 1') {
                         player.tally.map(tally => {
                             if (tally[0] === action.button) {
-                                if (tally[1]+1 <= 3) {
+                                if (tally[1] + 1 <= 3) {
                                     tally[1] += 1;
                                 }
                             }
@@ -26,7 +26,7 @@ const cricketReducer = (state = cricketState, action) => {
                     if (player.name === 'Player 2') {
                         player.tally.map(tally => {
                             if (tally[0] === action.button) {
-                                if (tally[1]+1 <= 3) {
+                                if (tally[1] + 1 <= 3) {
                                     tally[1] += 1;
                                 }
                             }

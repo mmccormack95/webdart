@@ -10,7 +10,8 @@ function MultiButton() {
     }
 
     return <div className='multiButton'>
-        <input className='input-radio' name="multi" type="radio" id="x1" value="1" onInput={onChangeMultiplier} defaultChecked/>
+        <input className='input-radio' name="multi" type="radio" id="x1" value="1" onInput={onChangeMultiplier}
+               defaultChecked/>
         <label htmlFor="1">x1</label>
         <input className='input-radio' name="multi" type="radio" id="x2" value="2" onInput={onChangeMultiplier}/>
         <label htmlFor="2">x2</label>

@@ -3,7 +3,7 @@ const threeOhOneState = {
         name: "Player 1",
         totalScore: "0",
         rounds: [],
-        }, {
+    }, {
         name: "Player 2",
         totalScore: "0",
         rounds: [],
