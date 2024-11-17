@@ -17,3 +17,7 @@ export const tally2Score = (button) => ({
     type: 'TALLY2_SCORE',
     button: button
 });
+
+export const resetRounds = () => ({
+    type: 'RESET_ROUNDS'
+});

@@ -88,6 +88,15 @@ const cricketReducer = (state = cricketState, action) => {
                     return player;
                 }),
             }
+        case 'RESET_ROUNDS':
+            return {
+                ...state,
+                players: state.players.map(player => {
+                    player.tally = player.tally.map(tally => [tally[0], 0]);
+                    player.totalScore = 0;
+                    return player;
+                }),
+            }
         default:
             return state;
     }
