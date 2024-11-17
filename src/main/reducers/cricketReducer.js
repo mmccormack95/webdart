@@ -79,7 +79,11 @@ const cricketReducer = (state = cricketState, action) => {
                         player.tally.map(tally => {
                             if (tally[0] === action.button) {
                                 if (tally[1] === 3) {
-                                    player.totalScore += parseInt(action.button);
+                                    if (action.button === 'B') {
+                                        player.totalScore += 25;
+                                    } else {
+                                        player.totalScore += parseInt(action.button);
+                                    }
                                 }
                             }
                             return tally;

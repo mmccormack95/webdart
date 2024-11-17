@@ -19,3 +19,8 @@ export const getCurrentRound = createSelector(
     threeOhOneState,
     round => round.round,
 );
+
+export const getPlayers = createSelector(
+    threeOhOneState,
+    players => players.players,
+)
