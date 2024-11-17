@@ -6,7 +6,7 @@ class MainPage extends Component {
     render() {
         return <div>
             <Title title={"Dart Games"}/>
-            <Game players={this.props.players}/>
+            <Game />
         </div>
     }
 }

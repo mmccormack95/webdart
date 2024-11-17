@@ -1,6 +1,6 @@
 import React from "react";
 import {useDispatch} from "react-redux";
-import {setGame} from "../actions/uiActions";
+import {setGame} from "../../actions/uiActions";
 
 function GameSelection() {
     const dispatch = useDispatch();
