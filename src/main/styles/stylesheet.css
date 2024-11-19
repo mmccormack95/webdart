@@ -4,7 +4,7 @@ h1 {
     font-size: 10rem;
     margin: 2rem 0;
     letter-spacing: -1px;
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
@@ -14,8 +14,15 @@ h2 {
     font-size: 4rem;
     margin: 2rem 0;
     letter-spacing: -1px;
-    color: black;
     text-decoration: none;
+    color: white;
+}
+
+.mainPage {
+    background-image: url("../../../public/background.jpg");
+    background-position: top center;
+    background-size: cover;
+    background-attachment:fixed;
 }
 
 .scoringGrid {
@@ -32,6 +39,7 @@ h2 {
     text-align: center;
     border: 1px solid black;
     background-color: sandybrown;
+    color: white;
 }
 
 .input-section {
@@ -73,6 +81,7 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    color: white;
 
     .input-radio {
         display: inline-block;
@@ -85,6 +94,7 @@ h2 {
     justify-content: center;
     font-size: 20px;
     margin: 5px;
+    color: white;
 }
 
 .gameSelection {
@@ -93,6 +103,8 @@ h2 {
     max-width: 1000px;
     margin: 0 auto;
     justify-content: center;
+    color: white;
+    padding-bottom: 10px;
 }
 
 .newGameButtonGrid {
@@ -130,6 +142,7 @@ h2 {
     padding: 0;
     outline: 0;
     width: 600px;
+    color: white;
 }
 
 .cricket-button {
@@ -141,6 +154,7 @@ h2 {
     cursor: pointer;
     width: 33%;
     max-width: 100px;
+    color: white;
 }
 
 .cricket-tally {
@@ -151,6 +165,7 @@ h2 {
     width: 33%;
     max-width: 100px;
     text-align: center;
+    color: white;
 }
 
 .tally-div {
@@ -163,6 +178,7 @@ h2 {
     text-align: center;
     font-size: 50px;
     width: 25%;
+    color: white;
 }
 
 .cricket-player-section {
