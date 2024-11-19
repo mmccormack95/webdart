@@ -19,10 +19,11 @@ h2 {
 }
 
 .mainPage {
-    background-image: url("../../../public/background.jpg");
+    background-image: url("../../../public/background2.jpg");
     background-position: top center;
-    background-size: cover;
+    background-size: 100% auto;
     background-attachment:fixed;
+    background-repeat: no-repeat;
 }
 
 .scoringGrid {
@@ -142,14 +143,24 @@ h2 {
     padding: 0;
     outline: 0;
     width: 600px;
-    color: white;
+    color: black;
+}
+
+.modal-content h2 {
+    text-align: center;
+    font-weight: 100;
+    font-size: 4rem;
+    margin: 2rem 0;
+    letter-spacing: -1px;
+    text-decoration: none;
+    color: black;
 }
 
 .cricket-button {
     justify-content: center;
     flex-wrap: wrap;
     border: white solid 1px;
-    background-color: inherit;
+    background-color: darkgreen;
     font-size: 16px;
     cursor: pointer;
     width: 33%;
