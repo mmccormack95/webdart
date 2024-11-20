@@ -31,9 +31,9 @@ function InputSection(props) {
                     );
                 })
             }
+            <MultiButton name={props.turn}/>
             <button value={0} onClick={addRounds}>Miss</button>
             <button onClick={undoRoundAction}>Undo</button>
-            <MultiButton name={props.turn}/>
             <p>
                 Round: {round.join(', ')}
             </p>
