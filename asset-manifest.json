@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/webdart/static/css/main.d32fd63c.css",
+    "main.js": "/webdart/static/js/main.6d63140d.js",
+    "static/media/background.jpg": "/webdart/static/media/background.cd0aa33180e0c71f379c.jpg",
+    "index.html": "/webdart/index.html",
+    "main.d32fd63c.css.map": "/webdart/static/css/main.d32fd63c.css.map",
+    "main.6d63140d.js.map": "/webdart/static/js/main.6d63140d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d32fd63c.css",
+    "static/js/main.6d63140d.js"
+  ]
+}
