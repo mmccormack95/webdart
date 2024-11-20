@@ -9,11 +9,10 @@ function InputSection(props) {
     const playerTurn = useSelector(getPlayerTurn);
     const round = useSelector(getCurrentRound);
 
-    const addRounds = () => {
-        const input = document.getElementById('inputBar').value;
+    const addRounds = (e) => {
+        const input = e.target.value
         dispatch(handleRoundScoreChange(input))
         dispatch(addRound(playerTurn))
-        document.getElementById('inputBar').value = '0';
     }
 
     const undoRoundAction = () => {
@@ -22,8 +21,17 @@ function InputSection(props) {
 
     return <>
         <div className="input-section">
-            <input id="inputBar" type="number" placeholder="Enter Score" defaultValue='0'/>
-            <button onClick={addRounds}>Add</button>
+            {
+                Array.from({length: 21}, (_, i) => i + 1).map(number => {
+                    number = number === 21 ? 25 : number;
+                    return (
+                        <button key={number} value={number} onClick={addRounds}>
+                            {number === 25 ? 'B' : number}
+                        </button>
+                    );
+                })
+            }
+            <button value={0} onClick={addRounds}>Miss</button>
             <button onClick={undoRoundAction}>Undo</button>
             <MultiButton name={props.turn}/>
             <p>

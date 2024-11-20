@@ -21,9 +21,8 @@ h2 {
 .mainPage {
     background-image: url("../../../public/background.jpg");
     background-position: top center;
-    background-size: 100% auto;
+    background-size: 100% 100%;
     background-attachment:fixed;
-    background-repeat: no-repeat;
 }
 
 .scoringGrid {
@@ -39,15 +38,18 @@ h2 {
     margin: 1rem;
     text-align: center;
     border: 1px solid black;
-    background-color: sandybrown;
+    background-color: green;
     color: white;
+    font-size: 1rem;
 }
 
 .input-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 20px;
+    margin: auto;
+    min-width: 700px;
+    max-width: 700px;
 }
 
 .input-section input::-webkit-outer-spin-button,
@@ -56,22 +58,12 @@ h2 {
     margin: 0;
 }
 
-.input-section input[type="number"] {
-    -moz-appearance: textfield;
-    margin: 5px;
-    padding: 5px;
-    font-size: 20px;
-    width: 60px;
-    border-radius: 12px;
-    text-align: center;
-    background-color: lightgray;
-}
-
 .input-section button {
     margin: 5px;
     padding: 5px;
     font-size: 20px;
-    width: 60px;
+    width: 14%;
+    max-width: 60px;
     border-radius: 12px;
     text-align: center;
     background-color: lightgray;
@@ -105,7 +97,7 @@ h2 {
     margin: 0 auto;
     justify-content: center;
     color: white;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 .newGameButtonGrid {
@@ -188,8 +180,8 @@ h2 {
 .cricket-player {
     text-align: center;
     font-size: 50px;
-    width: 10%;
     color: white;
+    margin: 10px;
 }
 
 .cricket-player-section {
