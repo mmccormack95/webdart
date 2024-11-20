@@ -9,15 +9,15 @@ function MultiButton() {
         dispatch(setMultiplier(e.target.value))
     }
 
-    // new buttons instead of input radio
-    return <div className='multiButton'>
-        <input className='input-radio' name="multi" type="radio" id="x1" value="1" onInput={onChangeMultiplier}
-               defaultChecked/>
-        <label htmlFor="1">x1</label>
-        <input className='input-radio' name="multi" type="radio" id="x2" value="2" onInput={onChangeMultiplier}/>
-        <label htmlFor="2">x2</label>
-        <input className='input-radio' name="multi" type="radio" id="x3" value="3" onInput={onChangeMultiplier}/>
-        <label htmlFor="3">x3</label>
+    return <div className="btn-group" role="group">
+        <input type="radio" className="btn-check" name="btnradio" id="btnradio1" autoComplete="off" value={1} onClick={onChangeMultiplier} defaultChecked/>
+        <label className="btn btn-outline-primary" htmlFor="btnradio1">x1</label>
+
+        <input type="radio" className="btn-check" name="btnradio" id="btnradio2" autoComplete="off" value={2} onClick={onChangeMultiplier} />
+        <label className="btn btn-outline-primary" htmlFor="btnradio2">x2</label>
+
+        <input type="radio" className="btn-check" name="btnradio" id="btnradio3" autoComplete="off" value={3} onClick={onChangeMultiplier}/>
+        <label className="btn btn-outline-primary" htmlFor="btnradio3">x3</label>
     </div>
 }
 

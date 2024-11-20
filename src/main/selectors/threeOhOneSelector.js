@@ -30,3 +30,8 @@ export const getPlayers = createSelector(
     threeOhOneState,
     players => players.players,
 )
+
+export const getMultiplier = createSelector(
+    threeOhOneState,
+    multiplier => multiplier.multiplier,
+)
