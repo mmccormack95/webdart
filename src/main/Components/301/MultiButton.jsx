@@ -9,6 +9,7 @@ function MultiButton() {
         dispatch(setMultiplier(e.target.value))
     }
 
+    // new buttons instead of input radio
     return <div className='multiButton'>
         <input className='input-radio' name="multi" type="radio" id="x1" value="1" onInput={onChangeMultiplier}
                defaultChecked/>

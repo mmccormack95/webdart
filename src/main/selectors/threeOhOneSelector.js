@@ -2,9 +2,15 @@ import {createSelector} from 'reselect';
 
 const threeOhOneState = state => state.threeOhOne;
 
+export const getRoundLength = createSelector(
+    threeOhOneState,
+    round => round.round.length,
+);
+
 export const getWinningPlayer = createSelector(
     threeOhOneState,
-    players => players.players.find(player => player.totalScore === 301),
+    state => state.players.find(player =>
+        player.totalScore === 301 && state.round.length === 0),
     {
         devModeChecks: {identityFunctionCheck: 'never'}
     }

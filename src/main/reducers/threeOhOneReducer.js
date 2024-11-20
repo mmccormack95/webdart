@@ -15,7 +15,7 @@ const threeOhOneReducer = (state = threeOhOneState, action) => {
                             const total = parseInt(player.totalScore) + roundtotal;
                             if (total > 301) {
                                 player.rounds.push([state.round, total]);
-                                player.totalScore = 301 - (state.roundScore * state.multiplier);
+                                player.totalScore = 301 - (roundtotal);
                             } else {
                                 player.totalScore = total;
                                 player.rounds.push([state.round, total]);
