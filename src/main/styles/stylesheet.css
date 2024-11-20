@@ -69,19 +69,6 @@ h2 {
     background-color: lightgray;
 }
 
-.multiButton {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    color: white;
-
-    .input-radio {
-        display: inline-block;
-        margin: 5px;
-    }
-}
-
 .input-section p {
     display: flex;
     justify-content: center;
@@ -188,4 +175,45 @@ h2 {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
+}
+
+.btn-group {
+    position: relative;
+    display: inline-flex;
+    vertical-align: middle;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-check {
+    position: absolute;
+    clip: rect(0,0,0,0);
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+
+.btn-check:checked  + .btn{
+    color: black;
+    background-color: royalblue;
+    border-color: white;
+}
+
+.btn {
+    margin: 5px;
+    width: 14%;
+    max-width: 60px;
+    border-radius: 12px;
+    text-align: center;
+    background-color: lightgray;
+    display: inline-block;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: black;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid black;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
